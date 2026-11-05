@@ -6,7 +6,7 @@
 <meta name="referrer" content="no-referrer">
 <title>Условия использования MedKoalu</title>
 <style>
-  :root { --bg: #EDF6FF; --ink: #0E1A2B; --ink-muted: #53647C; --accent: #3B82F6; --line: rgba(14,26,43,0.12); }
+  :root { --bg: #EDF6FF; --ink: #0E1A2B; --ink-muted: #53647C; --accent: #3B82F6; }
   body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, system-ui, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.6; padding-block: max(40px, env(safe-area-inset-top, 0px)) 56px; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
   main { max-width: 720px; margin: 0 auto; }
   h1 { font-size: clamp(28px, 5vw, 38px); line-height: 1.15; letter-spacing: -0.015em; margin: 0 0 8px; text-wrap: balance; }
@@ -19,17 +19,15 @@
   a { color: var(--accent); transition: transform 0.12s ease, opacity 0.12s ease; }
   a:active { transform: scale(0.97); opacity: 0.7; }
   .back { display: inline-block; margin-bottom: 24px; font-size: 15px; text-decoration: none; }
-  .lang { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 8px; }
-  details { margin-top: 32px; background: rgba(255,255,255,0.6); border-radius: 18px; padding: 4px 22px; }
-  summary { cursor: pointer; font-weight: 650; padding: 16px 0; color: var(--ink); }
-  details[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 14px; }
-  details > div { padding-bottom: 18px; }
   :focus-visible { outline: 3px solid #70B6FF; outline-offset: 3px; border-radius: 6px; }
+  html[lang="en"] [data-l="ru"], html[lang="ru"] [data-l="en"] { display: none !important; }
 </style>
+<script>(function(){var l=String((navigator.languages&&navigator.languages[0])||navigator.language||'ru').toLowerCase();var ru=/^(ru|kk|uk|be)(-|$)/.test(l);var h=document.documentElement;h.lang=ru?'ru':'en';document.title=ru?'Условия использования MedKoalu':'MedKoalu Terms of Use';})();</script>
 </head>
 <body>
 <main>
 <a class="back" href="https://medkoalu.app">← MedKoalu</a>
+<div data-l="ru">
 <h1>Условия использования MedKoalu</h1>
 <p>Версия от 29.10.2026. Контакт: <a href="mailto:beks0928.studio@gmail.com">beks0928.studio@gmail.com</a></p>
 <h2>Не медицинский совет</h2>
@@ -46,10 +44,9 @@
 <p>Ник виден твоим друзьям. Не указывай в нике личные данные и не используй чужие имена. Мы можем удалить профиль, который нарушает эти условия.</p>
 <h2>Изменения и право</h2>
 <p>Условия могут меняться, актуальная версия всегда в приложении. Применяется право страны, где зарегистрирован разработчик, если иное не требуется законом о защите прав потребителей в стране пользователя.</p>
-<details>
-<summary>English version</summary>
-<div>
-<h2>Terms of Use for MedKoalu</h1>
+</div>
+<div data-l="en">
+<h1>Terms of Use for MedKoalu</h1>
 <p>Version of 29.10.2026. Contact: <a href="mailto:beks0928.studio@gmail.com">beks0928.studio@gmail.com</a></p>
 <h2>Not medical advice</h2>
 <p>MedKoalu only reminds you to take medication and counts pills. It does not diagnose, prescribe, choose or check doses, and does not replace a doctor or pharmacist. Your schedule, doses and drug interactions are for your doctor to decide. Talk to a professional before any treatment decision. In an emergency, call your local emergency number.</p>
@@ -66,7 +63,6 @@
 <h2>Changes and law</h2>
 <p>These terms may change; the current version is always in the app. The law of the country where the developer is registered applies, unless consumer protection law in the user&#x27;s country requires otherwise.</p>
 </div>
-</details>
 </main>
 </body>
 </html>
