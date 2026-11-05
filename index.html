@@ -21,12 +21,26 @@
   .back { display: inline-block; margin-bottom: 24px; font-size: 15px; text-decoration: none; }
   :focus-visible { outline: 3px solid #70B6FF; outline-offset: 3px; border-radius: 6px; }
   html[lang="en"] [data-l="ru"], html[lang="ru"] [data-l="en"] { display: none !important; }
+  #lg { display: none; position: fixed; inset: 0; z-index: 99; background: #EDF6FF; align-items: center; justify-content: center; flex-direction: column; gap: 22px; padding: 24px; text-align: center; color: #0E1A2B; font-family: -apple-system, system-ui, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; }
+  html.ask #lg { display: flex; }
+  html.ask body { overflow: hidden; }
+  #lg p { margin: 0; font-size: 20px; font-weight: 600; color: #0E1A2B; max-width: none; }
+  #lg .opts { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  #lg button { font: inherit; font-size: 18px; font-weight: 600; padding: 14px 28px; min-width: 150px; border: 0; border-radius: 14px; background: #1C1C1E; color: #fff; cursor: pointer; transition: transform 0.12s ease, background-color 0.12s ease; }
+  #lg button:active { transform: scale(0.96); background: #000; }
+  .sw { display: inline-flex; border: 1px solid #B7C6DB; border-radius: 999px; overflow: hidden; background: rgba(255,255,255,0.6); }
+  .sw button { font: inherit; font-size: 13px; font-weight: 600; padding: 6px 12px; border: 0; background: transparent; color: #53647C; cursor: pointer; transition: transform 0.12s ease, opacity 0.12s ease; }
+  .sw button:active { transform: scale(0.94); opacity: 0.7; }
+  html[lang="ru"] .sw [data-set="ru"], html[lang="en"] .sw [data-set="en"] { background: #3B82F6; color: #fff; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 24px; }
+  .bar .back { margin-bottom: 0; }
 </style>
-<script>(function(){var l=String((navigator.languages&&navigator.languages[0])||navigator.language||'ru').toLowerCase();var ru=/^(ru|kk|uk|be)(-|$)/.test(l);var h=document.documentElement;h.lang=ru?'ru':'en';document.title=ru?'Условия использования MedKoalu':'MedKoalu Terms of Use';})();</script>
+<script>(function(){var T={"ru": "Условия использования MedKoalu", "en": "MedKoalu Terms of Use"},D=null;var h=document.documentElement;function dev(){var l=String((navigator.languages&&navigator.languages[0])||navigator.language||'ru').toLowerCase();return /^(ru|kk|uk|be)(-|$)/.test(l)?'ru':'en'}function get(){try{return localStorage.getItem('ml')}catch(e){return null}}function put(v){try{localStorage.setItem('ml',v)}catch(e){}}function apply(v){h.lang=v;document.title=T[v];var m=document.querySelector('meta[name=description]');if(m&&D)m.setAttribute('content',D[v]);var a=document.querySelectorAll('a[data-x]');for(var i=0;i<a.length;i++)a[i].href=a[i].getAttribute('data-x')+'?l='+v}var q=(location.search.match(/[?&]l=(ru|en)/)||[])[1];var s=q||get();if(q)put(q);if(s!=='ru'&&s!=='en'){h.classList.add('ask');s=dev()}h.lang=s;document.title=T[s];if(D){var m=document.querySelector('meta[name=description]');if(m)m.setAttribute('content',D[s])}document.addEventListener('DOMContentLoaded',function(){apply(h.lang);var b=document.querySelectorAll('[data-set]');for(var i=0;i<b.length;i++)b[i].addEventListener('click',function(){var v=this.getAttribute('data-set');put(v);h.classList.remove('ask');apply(v)})});})();</script>
 </head>
 <body>
+<div id="lg" role="dialog" aria-label="Language"><p>Выберите язык · Choose language</p><div class="opts"><button type="button" data-set="ru">Русский</button><button type="button" data-set="en">English</button></div></div>
 <main>
-<a class="back" href="https://medkoalu.app">← MedKoalu</a>
+<div class="bar"><a class="back" href="https://medkoalu.app" data-x="https://medkoalu.app">← MedKoalu</a><div class="sw" role="group" aria-label="Language"><button type="button" data-set="ru">RU</button><button type="button" data-set="en">EN</button></div></div>
 <div data-l="ru">
 <h1>Условия использования MedKoalu</h1>
 <p>Версия от 29.10.2026. Контакт: <a href="mailto:beks0928.studio@gmail.com">beks0928.studio@gmail.com</a></p>
